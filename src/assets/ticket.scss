@@ -1,0 +1,690 @@
+@mixin tablet() {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile() {
+    @media (max-width: 415px) {
+        @content;
+    }
+}
+
+
+
+
+body {
+
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.testpage {
+    background-color: #000000;
+}
+
+.bgImg {
+    background-image:
+        url("../../public/images/ocean_background_AI_11.png");
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modalAlert {
+    font-weight: 700;
+    font-size: 1.5rem;
+    top: 20%;
+
+
+    @include mobile {
+        font-size: 1.25rem;
+    }
+}
+
+.modal-dialog .modal-content {
+    border-radius: 0px;
+}
+
+.testContext{
+    position: relative;
+
+}
+
+
+/* ⬇️標題 */
+
+.TicketContainer {
+
+    padding-top: 75px;
+    min-height: 800px;
+    position: relative;
+    color: white;
+
+
+}
+
+@media screen and (min-width: 992px) {
+    .TicketContainer {
+        width: 70%;
+        min-height: 800px;
+        position: relative;
+        color: white;
+
+
+    }
+}
+
+.title_ticket {
+
+    color: $light;
+    font-size: 3rem;
+    font-weight: 700;
+
+    text-shadow: 0em 0em 0.2em rgba(255, 255, 255, 0.5);
+
+    @include mobile {
+        font-size: 2rem;
+    }
+}
+
+.Timer {
+    width: 400px;
+    font-size: 18px;
+    text-shadow: 1px 1px 4px #000000;
+    border-top: #ffffff dashed 1px;
+    border-bottom: #ffffff dashed 1px;
+    padding: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+
+
+    @include mobile {
+        width: 300px;
+        font-size: 16px;
+    }
+}
+
+/* ⬇️購票流程 */
+
+.shoppingSOPbox {
+    width: 28rem;
+    display: flex;
+    color: #ffffff;
+
+    @include mobile {
+        margin-bottom: 10px;
+    }
+}
+
+
+.shoppingSOP {
+
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    flex-grow: 0;
+    display: flex;
+    font-weight: 600;
+    background-color: #ecfaff3f;
+    box-shadow: 0em 0em 0.05em 0.05em #FFFFFFbb;
+    outline-offset: -4px;
+    outline: 0.1px dashed rgb(55, 55, 55);
+    backdrop-filter: blur(2px);
+
+}
+
+.linebox {
+    flex-grow: 1;
+    align-self: center;
+}
+
+.line {
+    height: 0.0625rem;
+    background-color: $light;
+}
+
+/* 購票-填寫資料內容 */
+
+.InfoContainer {
+    padding-top: 75px;
+    min-height: 800px;
+    position: relative;
+}
+
+@media screen and (min-width: 768px) {
+    .InfoContainer {
+        width: 60%;
+        min-height: 800px;
+        position: relative;
+    }
+}
+
+.shoppingInfo {
+    justify-content: center;
+    display: flex;
+    padding-top: 3rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+
+    @include mobile {
+        padding-top: 0.75rem;
+
+        margin-right: 2rem;
+        margin-left: 2rem;
+
+    }
+}
+
+.infoInputBox {
+    padding-bottom: 1rem;
+    justify-content: center;
+    display: flex;
+
+
+    @include tablet() {
+        display: block;
+    }
+
+}
+
+.infoField {
+
+    padding: 1rem, 2rem, 1.5rem, 2rem;
+    margin-bottom: 2rem;
+
+    justify-content: center;
+    color: $light;
+
+    @include mobile() {
+        border: none;
+        padding: 0;
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.btn-check {
+    font-size: 24px;
+
+    @include mobile() {
+        font-size: 20px;
+
+    }
+}
+
+.btn-check:disabled+label {
+    text-decoration: line-through;
+}
+
+
+.FieldTitle {
+    font-size: 32px;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    color: #9DDCFF;
+    font-weight: 600;
+
+    @include mobile() {
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
+
+
+.Infolabel {
+    font-size: 24px;
+
+    @include tablet() {
+        font-size: 20px;
+        padding-top: 40px;
+    }
+}
+
+.Input {
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+
+    @include tablet() {
+        font-size: 20px;
+
+    }
+
+    width: 100%;
+}
+
+.Input:not(:placeholder-shown) {
+    background-color: transparent;
+    color: white;
+}
+
+.Input::placeholder {
+    background-color: transparent;
+    color: rgb(139, 139, 139);
+    font-size: 20px;
+
+    @include tablet() {
+        font-size: 18px;
+    }
+}
+
+
+li {
+    list-style-position: outside;
+}
+
+.form-check .form-check-input:checked {
+    background-color: #f6c035;
+    // color: #000;
+}
+
+/* ticket_check  ⬇️ */
+
+.CheckContainer {
+
+    padding-top: 75px;
+    min-height: 800px;
+    position: relative;
+}
+
+
+@media screen and (min-width: 768px) {
+    .CheckContainer {
+        width: 60%;
+        min-height: 800px;
+        position: relative;
+    }
+}
+
+
+.reminderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.5rem;
+
+}
+
+.orderContent {
+
+    padding-bottom: 0.25rem;
+    font-size: 1.2rem;
+}
+
+.admissionTimeBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0.0625rem solid $light;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.orderList {
+    border: solid 0.0625rem $dark;
+    padding: 0.75rem;
+
+}
+
+// 票券明細⬇️
+// 票券明細⬇️
+
+.orderListText {
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.orderTicketTotal {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.noticeText {
+    font-size: 1.2rem;
+}
+
+// 票券明細
+
+// 電子票券⬇️
+
+.qrcode {
+    border: 0.2rem solid rgb(255, 255, 255);
+    background-color: white;
+}
+
+.card,
+.list-group,
+.list-group-item {
+    background-color: #021016;
+    color: white;
+    border: 0.0625rem solid rgb(214, 214, 214);
+}
+
+.accordion-item,
+.accordion-collapse,
+.accordion-body {
+    background-color: #021016;
+    color: white;
+    border: 0.0625rem solid rgb(214, 214, 214);
+}
+
+.accordion-item .accordionTicket {
+    border: 1px solid white;
+    border-bottom: none;
+    background-color: transparent;
+    color: white;
+}
+
+.accordion-header .accordion-button::after,
+.accordion-header .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23ffffff%27%3e%3cpath fill-rule=%27evenodd%27 d=%27M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e");
+}
+
+.accordionTicketDescription {
+    font-size: 1.25rem;
+}
+
+.accordtionTicketType {
+    font-size: 2rem;
+
+    @include mobile() {
+        font-size: 1.5rem;
+    }
+}
+
+.accordion-header {
+    background-color: #021016;
+}
+
+// 電子票券
+
+/* 購票-選擇票種 */
+
+.Cart_date_title {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 600;
+    color: #ffffff;
+
+    @include mobile {
+        font-size: 24px;
+    }
+}
+
+.Cart_date {
+    border: 0.0625rem solid $light;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    margin-left: 0.0625rem;
+    margin-right: 0.0625rem;
+    justify-content: center;
+    display: flex;
+    background-color: transparent;
+    color: white;
+
+}
+
+.btn_Cart {
+    width: 300px;
+    font-size: 20px;
+    box-shadow: 0.5px 0.5px 5px #303030;
+}
+
+.card1 {
+    padding-top: 2.2rem;
+    padding-bottom: 1.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    border-top: 0.5px solid $light;
+    color: white;
+
+}
+
+.card2 {
+    padding-top: 2.2rem;
+    padding-bottom: 1.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-top: 0.5px solid $light;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: $light;
+    background-color: transparent;
+
+
+
+}
+
+.TicketName {
+    font-size: 20px;
+    font-weight: 400;
+
+    @include mobile() {
+        font-size: 20px;
+        font-weight: 300;
+    }
+}
+
+.normalEntry {
+    font-size: 14px;
+}
+
+.CartListText {
+    font-size: 18px;
+    text-align: center;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-weight: 400;
+    justify-content: center;
+
+    @include mobile() {
+        font-size: 15.5px;
+        font-weight: 300;
+    }
+
+}
+
+.CartBtn {
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.0625rem;
+
+}
+
+.CartCount {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    border: 0.0625rem $light solid;
+    text-align: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    justify-content: center;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background-color: transparent;
+    color: #ffffff;
+
+    @include mobile() {
+
+        width: 2rem;
+        height: 2rem;
+
+    }
+
+}
+
+.Cart {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    box-shadow: 0px 0px 10px #ffffff;
+    text-shadow: 0px 0px 3px #111111;
+    backdrop-filter: blur(2.5px);
+    background-color: #ECFAFF50;
+    outline-offset: -5px;
+    outline: 0.5px dashed rgb(54, 54, 54);
+    padding: 20px;
+}
+
+.Cart_DeleteBtn {
+    width: 1.75rem;
+    height: 1.75rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.0025rem;
+    font-size: 0.75rem;
+
+}
+
+.Cart_DeleteBtnS {
+    width: 15rem;
+    height: 1.75rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.0025rem;
+    font-size: 0.75rem;
+
+}
+
+.btn-session {
+    width: 5rem;
+    margin: 0.5rem;
+}
+
+.Ticketincart {
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: $light;
+    background-color: transparent;
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .TicketLarge {
+        display: block;
+    }
+
+    .TicketSmall {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .TicketLarge {
+        display: none;
+    }
+
+    .TicketSmall {
+        display: block;
+    }
+}
+
+/* ⬇️隱藏數字框的上下箭頭 */
+/* Chrome, Safari, Edge, Opera */
+.hide-arrows::-webkit-outer-spin-button,
+.hide-arrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+.hide-arrows {
+    -moz-appearance: textfield;
+}
+
+/* ⬆️ */
+
+
+
+/* Credit Card ⬇️*/
+
+.isEmptyText {
+    font-size: 1rem;
+    color: white;
+    font-weight: 700;
+    padding: 5px;
+    text-shadow: 0px 0px 10px rgba(206, 151, 0, 0.85);
+}
+
+
+.CreditCardInfo {
+    border: 0.0625rem solid $info;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+
+    justify-content: center;
+}
+
+.CreditCardContainer {
+
+    padding-top: 75px;
+    min-height: 800px;
+    position: relative;
+}
+
+
+@media screen and (min-width: 768px) {
+    .CreditCardContainer {
+        width: 60%;
+        min-height: 800px;
+        position: relative;
+    }
+}
+
+.CreditCardBox {
+    padding-top: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+
+    @include mobile {
+        padding-top: 0.75rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
+
+    }
+}
+
+.CreditInputBox {
+    padding-bottom: 0.75rem;
+}
+
+.dash {
+    width: 100px;
+    text-align: center;
+    font-size: 20px;
+    justify-self: center;
+
+}
+
+/* Credit Card ⬆️*/
